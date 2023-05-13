@@ -69,7 +69,7 @@ if(isset($_POST['submit'])){
 		
 		//$q = "INSERT INTO products (code, name, prod_desc, unit, qty, price, date) VALUES (?,?,?,?,?,?,?)";
 		$q = "INSERT INTO orders (formation_id, order_no, order_title, party, cnr, coc_id, possibility, order_commence_date, court, bench_id, order_receiving_date, order_status) VALUES (".$c_id.",'".$order_no."', '".$order_title."', '".$party."', '".$cnr."', ".$coc_id.", ".$possibility.", '".$order_commence_date."', '".$court."', '".$bench_id."', '".$order_receiving_date."', ".$order_status.")";
-		echo $q;
+		//echo $q;
 		$myPDO->query($q);
 		$order_id = $myPDO->lastInsertId();
 		$order_status_id = crud_order_status('insert',$order_id, $order_status);

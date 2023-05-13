@@ -1,12 +1,12 @@
 <?php
-include 'init.php';
+include_once 'init.php';
 
 $requiredRole = USER_ACCESS;
 if (! isAuthorized($requiredRole)) {
   header('Location: dashboard.php');
 }
 
-include ROOT_DIR_COMMON.'header.php';
+include_once ROOT_DIR_COMMON.'header.php';
 $page_name = 'Profile';
 $php_self = sanitize($_SERVER['PHP_SELF'], 'url');
 $username = sanitize(get_value_from_id('users', 'username', 'id', $user_id), 'string');
@@ -178,18 +178,18 @@ if(isset($_POST['submit_profile'])){
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
-			<?php include 'copyright.php'; ?>
+			<?php include_once 'copyright.php'; ?>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->
         <!-- ============================================================== -->
 		
 		<?php
-		include ROOT_DIR_COMMON.'footer.php';
-		include 'otpModal.php';
+		include_once ROOT_DIR_COMMON.'footer.php';
+		include_once 'otpModal.php';
 		?>
 
-<?php include 'contact_change_js.php'; ?>
+<?php include_once 'contact_change_js.php'; ?>
 <script type="text/javascript">	
 	<?php if((isset($_GET['insert']) && $_GET['insert'] == 1 && isset($_SERVER['HTTP_REFERER'])) || (isset($_GET['update']) && $_GET['update'] == 1 && isset($_SERVER['HTTP_REFERER']))){ ?>
 	$.toast({

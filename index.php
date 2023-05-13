@@ -1,6 +1,6 @@
 <?php
-	include 'init.php';
-    include ROOT_DIR_COMMON.'functions.php';
+	include_once 'init.php';
+    include_once ROOT_DIR_COMMON.'functions.php';
 	$php_self = sanitize($_SERVER['PHP_SELF'], 'url');
 	if(isset($_SESSION['role']) && $_SESSION['role'] != ''){
 		header('Location: dashboard.php');
@@ -269,7 +269,7 @@
 				</div>
 			</div>
 			<?php } ?>
-            <?php include 'copyright.php'; ?>
+            <?php include_once 'copyright.php'; ?>
         </div>
         <!-- ============================================================== -->
         <!-- End Page Content -->

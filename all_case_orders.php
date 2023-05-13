@@ -92,14 +92,14 @@ $date_set = 0;
 if(isset($_REQUEST['submit'])){
 	$cc_id = (isset($_REQUEST['c_id'])) ? $_REQUEST['c_id'] : '';
 	$comm_id = (isset($_REQUEST['comm_id'])) ? $_REQUEST['comm_id'] : '';
-	$order_no = (isset($_REQUEST['order_no'])) ? $_REQUEST['order_no'] : '';
-	$party = (isset($_REQUEST['party'])) ? $_REQUEST['party'] : '';
+	$order_no = htmlspecialchars((isset($_REQUEST['order_no'])) ? $_REQUEST['order_no'] : '');
+	$party = htmlspecialchars((isset($_REQUEST['party'])) ? $_REQUEST['party'] : '');
 	$orderId = (isset($_REQUEST['orderId'])) ? $_REQUEST['orderId'] : '';
-	$samay_id = (isset($_REQUEST['samay_id'])) ? ltrim($_REQUEST['samay_id'], 'S') : '';
+	$samay_id = htmlspecialchars((isset($_REQUEST['samay_id'])) ? ltrim($_REQUEST['samay_id'], 'S') : '');
 	//$state_id = get_value_from_id('districts','state_id','id',$centre_id);
 	if(!empty($_REQUEST['start']) || !empty($_REQUEST['end'])){
-		$start_date = $_REQUEST['start'];
-		$end_date = $_REQUEST['end'];
+		$start_date = htmlspecialchars($_REQUEST['start']);
+		$end_date = htmlspecialchars($_REQUEST['end']);
 		
 		$start_date1 = DateTime::createFromFormat('d-m-Y', $start_date);
 		$search_start = $start_date1->format('Y-m-d');
@@ -118,7 +118,7 @@ if(isset($_REQUEST['submit'])){
 	if($_SESSION['sess_userrole'] == 'manager'){
 		$comm_id = htmlspecialchars($_SESSION['sess_fid']);
 		//$cc_id = get_value_from_id("commissioners","parent_id","user_id",$comm_id);
-		$cc_id = get_value_from_id("formations","parent_id","id",$_SESSION['sess_fid']);
+		$cc_id = htmlspecialchars(get_value_from_id("formations","parent_id","id",$_SESSION['sess_fid']));
 	}else{
 		$comm_id = '';
 	}

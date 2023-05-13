@@ -1,5 +1,5 @@
 <?php
-include 'init.php';
+include_once 'init.php';
 
  
 $requiredRole = USER_ACCESS;
@@ -7,7 +7,7 @@ if (! isAuthorized($requiredRole) || $_SESSION['sess_userrole'] == 'manager' || 
   header('Location: dashboard.php');
 }
 
-include ROOT_DIR_COMMON.'header.php';
+include_once ROOT_DIR_COMMON.'header.php';
 
 $msg = "";
 $php_self = htmlspecialchars($_SERVER['PHP_SELF']);
@@ -313,18 +313,18 @@ if(isset($_POST['submit_form'])){
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <?php include 'copyright.php'; ?>
+            <?php include_once 'copyright.php'; ?>
         </div>
         <!-- /#page-wrapper -->
 
 <?php
-include ROOT_DIR_COMMON.'footer.php';
-include 'otpModal.php';
+include_once ROOT_DIR_COMMON.'footer.php';
+include_once 'otpModal.php';
 ?>
 
 <!--<link rel="stylesheet" href="<?php echo ROOT_URL; ?>/css/jquery-ui.css">
 <script src="<?php echo ROOT_URL; ?>/js/jquery-ui.js" ></script>-->
-<?php include 'contact_change_js.php'; ?>
+<?php include_once 'contact_change_js.php'; ?>
 <script type="text/javascript">
 var specialKeys = new Array();
 specialKeys['push'](8, 46);

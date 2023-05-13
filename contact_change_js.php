@@ -5,6 +5,7 @@ var otpVerified = 0; //global variable. default value 0
 var form_phone2 = 0;
 <?php
 if(isset($_GET['edit'])){
+	$edit = htmlspecialchars($_GET['edit']);
 ?>
 var form_phone2 = 1;
 <?php } ?>
@@ -228,7 +229,7 @@ var form_phone2 = 1;
     					otpElem1.remove();
     					otpElem1Prev.after('<button type="button" class="btn btn-success otpBtn verifiedBtn" style="cursor: auto;">Verified</button>');
     					$(".formError").hide();
-						<?php if(!isset($_GET['edit'])){ ?>
+						<?php if(!isset($edit)){ ?>
 							$("#form_phone2").val($("#form_phone").val());
 						<?php } ?>
     					otpElem1Prev.prop( "disabled", true );
@@ -385,7 +386,7 @@ var form_phone2 = 1;
 							//$(formElem)[0].reset();
 							//$("form#auto_login")[0].submit();
 							//location.reload(true);
-							window.location.href= "<?=$_SERVER['PHP_SELF'].(isset($_GET['edit']) ? '?edit='.$_GET['edit'].'&update=1&ph=y' : '');?>";
+							window.location.href= "<?=$_SERVER['PHP_SELF'].(isset($edit) ? '?edit='.$edit.'&update=1&ph=y' : '');?>";
                         }, 3000);
         		    }else if(result.type == 'failure'){
         		        console.log("Mail not sent");

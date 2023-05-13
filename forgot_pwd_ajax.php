@@ -1,6 +1,6 @@
 <?php
-include 'init.php';
-include 'common/functions.php';
+include_once 'init.php';
+include_once 'common/functions.php';
 
 if($_POST['email'] != ""){
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);

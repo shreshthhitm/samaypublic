@@ -1,6 +1,6 @@
 <?php
-include 'init.php';
-include ROOT_DIR_COMMON.'functions.php';
+include_once 'init.php';
+include_once ROOT_DIR_COMMON.'functions.php';
 //$autoTypeNo = $_GET['type'];
 //$invoice_type = $_GET['invoice_type'];
 //echo $autoTypeNo."<br/>";

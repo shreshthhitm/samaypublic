@@ -1,6 +1,6 @@
 <?php
-include 'init.php';
-include ROOT_DIR_COMMON.'functions.php';
+include_once 'init.php';
+include_once ROOT_DIR_COMMON.'functions.php';
 $formation_id = $_POST['formation_id'];
 $user_id = $_POST['user_id'];
 if(!empty($formation_id) && !empty($user_id)){

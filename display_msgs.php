@@ -1,6 +1,6 @@
 <?php
-include 'init.php';
-include ROOT_DIR_COMMON.'functions.php';
+include_once 'init.php';
+include_once ROOT_DIR_COMMON.'functions.php';
 
 if(!empty($_POST["order_id"])) {
 	$order_id = $_POST["order_id"];

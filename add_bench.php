@@ -1,12 +1,12 @@
 <?php
-include 'init.php';
+include_once 'init.php';
  
 $requiredRole = ADMIN_ACCESS;
 if (! isAuthorized($requiredRole)) {
   header('Location: dashboard.php');
 }
 
-include ROOT_DIR_COMMON.'header.php';
+include_once ROOT_DIR_COMMON.'header.php';
 
 $msg = "";
 
@@ -177,12 +177,12 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <?php include 'copyright.php'; ?>
+            <?php include_once 'copyright.php'; ?>
         </div>
         <!-- /#page-wrapper -->
 
 <?php
-include ROOT_DIR_COMMON.'footer.php';
+include_once ROOT_DIR_COMMON.'footer.php';
 
 ?>
 

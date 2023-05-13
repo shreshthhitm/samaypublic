@@ -1,5 +1,5 @@
 <?php
-	include 'init.php';
+	include_once 'init.php';
     include_once ROOT_DIR_COMMON.'functions.php';
 	if(isset($_SESSION['role']) && $_SESSION['role'] != ''){
 		header('Location: dashboard.php');
@@ -233,11 +233,11 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
-            <?php include 'copyright.php'; ?>
+            <?php include_once 'copyright.php'; ?>
         </div>
         <!-- /#page-wrapper -->
 
 <?php
-include ROOT_DIR_COMMON.'footer.php';
-include 'otpModal.php';
+include_once ROOT_DIR_COMMON.'footer.php';
+include_once 'otpModal.php';
 ?>

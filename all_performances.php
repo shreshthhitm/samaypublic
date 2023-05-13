@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
 	$s = 1;
 	$r_type = (isset($_POST['r_type']) ? $_POST['r_type'] : '');
 	$month = (isset($_POST['month']) ? $_POST['month'] : '');
-	$quarter = (isset($_POST['quarter']) ? $_POST['quarter'] : '');
+	$quarter = htmlspecialchars(isset($_POST['quarter']) ? $_POST['quarter'] : '');
 	//$req_year = 
 	$year = (isset($_POST['year']) ? $_POST['year'] : '');
 	$period = ((isset($_POST['r_type']) && $_POST['r_type'] != "Annually") ? ($_POST['r_type'] == "Quarterly" ? $quarter : $month ) : '');
