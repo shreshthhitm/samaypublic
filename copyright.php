@@ -1,0 +1,1 @@
+<footer class="footer text-left"><?php echo date('Y'); ?> &copy; SAMAY<span class="" style="float: right;">For any query, contact us at <i class="fa fa-envelope"></i> xxxxxx@xxxxx.gov.in <i class="fa fa-mobile m-l-5"></i> 1800-180-xxxx</span></footer>
