@@ -175,7 +175,7 @@ if(isset($_REQUEST['submit'])){
                                                 </div>
 												<?php
 												}else{ ?>
-													<input type="hidden" class="c_id" id="c_id" name="c_id" value="<?=$cc_id;?>" />
+													<input type="hidden" class="c_id" id="c_id" name="c_id" value="<?=htmlspecialchars($cc_id, ENT_QUOTES);?>" />
 												<?php
 												}
 												?>
@@ -201,7 +201,7 @@ if(isset($_REQUEST['submit'])){
                                                 </div>
 												<?php
 												}else{ ?>
-													<input type="hidden" class="comm_id" id="comm_id" name="comm_id" value="<?=$comm_id;?>" />
+													<input type="hidden" class="comm_id" id="comm_id" name="comm_id" value="<?=htmlspecialchars($comm_id, ENT_QUOTES);?>" />
 												<?php
 												}
 												?>
