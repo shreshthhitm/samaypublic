@@ -73,7 +73,7 @@ if($r_type == 'Quarterly'){
 	$re_yr = $mo >= 4 ? $yy : $yy + 1;
 	$page_heading_date = date('F Y',strtotime(date($re_yr.'-'.$month.'-01')));
 }
-//$page_heading = $page_name.' for <span class="text-danger">'.$page_heading_date.'</span>';
+$page_heading = $page_name.' for <span class="text-danger">'.htmlspecialchars($page_heading_date).'</span>';
 /*if(isset($_GET['role']) && $_GET['role'] != ''){
 	$role = $_GET['role'];
 	$page_name = $user_roles[$role];
@@ -205,7 +205,7 @@ if($r_type == 'Quarterly'){
 							<div class="panel-heading">
 								<div class="row">
 									<div class="col-xs-6">
-										<?=$page_name.' for <span class="text-danger">'.$page_heading_date.'</span>';?>
+										<?=$page_heading;?>
 									</div>
 									<?php if($_SESSION['sess_userrole'] != 'manager'){ ?>
 									<div class="col-xs-6 text-right nc_holder">
