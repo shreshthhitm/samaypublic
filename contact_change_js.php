@@ -4,6 +4,7 @@ var otpVerified = 0; //global variable. default value 0
 	//var otpVerifiedEmail = 0;
 var form_phone2 = 0;
 <?php
+$php_self = htmlspecialchars($_SERVER['PHP_SELF']);
 if(isset($_GET['edit'])){
 	$edit = htmlspecialchars($_GET['edit']);
 ?>
@@ -386,7 +387,7 @@ var form_phone2 = 1;
 							//$(formElem)[0].reset();
 							//$("form#auto_login")[0].submit();
 							//location.reload(true);
-							window.location.href= "<?=$_SERVER['PHP_SELF'].(isset($edit) ? '?edit='.$edit.'&update=1&ph=y' : '');?>";
+							window.location.href= "<?=$php_self.(isset($edit) ? '?edit='.$edit.'&update=1&ph=y' : '');?>";
                         }, 3000);
         		    }else if(result.type == 'failure'){
         		        console.log("Mail not sent");

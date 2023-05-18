@@ -90,8 +90,8 @@ if(isset($_POST['submit_comment'])){
 $s = 0;
 $date_set = 0;
 if(isset($_REQUEST['submit'])){
-	$cc_id = (isset($_REQUEST['c_id'])) ? $_REQUEST['c_id'] : '';
-	$comm_id = (isset($_REQUEST['comm_id'])) ? $_REQUEST['comm_id'] : '';
+	$cc_id = htmlspecialchars((isset($_REQUEST['c_id'])) ? $_REQUEST['c_id'] : '');
+	$comm_id = htmlspecialchars((isset($_REQUEST['comm_id'])) ? $_REQUEST['comm_id'] : '');
 	$order_no = htmlspecialchars((isset($_REQUEST['order_no'])) ? $_REQUEST['order_no'] : '');
 	$party = htmlspecialchars((isset($_REQUEST['party'])) ? $_REQUEST['party'] : '');
 	$orderId = (isset($_REQUEST['orderId'])) ? $_REQUEST['orderId'] : '';
